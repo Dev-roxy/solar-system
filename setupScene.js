@@ -4,6 +4,7 @@ import { RenderPass } from "three/examples/jsm/postprocessing/RenderPass.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import { config } from "./config";
+import { textureLoader } from "./utils/textureLoader.js";
 const canvas = document.getElementById("screen");
 
 const scene = new THREE.Scene();
@@ -55,7 +56,30 @@ document.addEventListener("resize", function () {
   composer.render();
 });
 
-// post-processing effects
+// adding a background texture to the scene
+
+// Load the space texture
+const spaceTexture = textureLoader.load('/textures/space.jpg',(texture)=>{
+  texture.wrapS = THREE.RepeatWrapping;
+  texture.wrapT = THREE.RepeatWrapping;
+  texture.repeat.set(1, 1); // Adjust the repeat value as needed
+  texture.anisotropy = 16; // Improve texture quality
+  texture.encoding = THREE.sRGBEncoding; // Ensure correct color space
+});
+
+// Create geometry (big enough to surround the scene)
+const geometry = new THREE.SphereGeometry(500, 64, 64);
+// Create material with space texture
+const material = new THREE.MeshBasicMaterial({
+  map: spaceTexture,
+  side: THREE.BackSide, // ensure texture is visible from inside
+});
+// Create the mesh
+const spaceSphere = new THREE.Mesh(geometry, material);
+
+// Add to the scene
+scene.add(spaceSphere);
+
 
 // Create a bloom pass for post-processing effects
 export const bloomPass = new UnrealBloomPass(
