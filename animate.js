@@ -7,15 +7,15 @@ const clock = new THREE.Clock();
 export function animate(planets, controls, composer) {
   // Animation loop function to update the scene
   function animationLoop() {
+    controls.update(); // Update controls for smooth interaction
+    if (config.isBloomEnabled) {
+      composer.passes[0].enabled = true; // Enable bloom effect if configured
+      composer.render(); // Render the scene with post-processing effects
+    } else {
+      composer.passes[0].enabled = false; // Disable bloom effect if not configured
+      renderer.render(scene, camera);
+    }
     if (config.isPlaying) {
-      controls.update(); // Update controls for smooth interaction
-      if (config.isBloomEnabled) {
-        composer.passes[0].enabled = true; // Enable bloom effect if configured
-        composer.render(); // Render the scene with post-processing effects
-      } else {
-        composer.passes[0].enabled = false; // Disable bloom effect if not configured
-        renderer.render(scene, camera);
-      }
 
       const elapsedTime = clock.getDelta(); // Get the total elapsed time
 
