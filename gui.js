@@ -29,7 +29,7 @@ const configFolder = gui.addFolder("Configuration");
   // Ambient light intensity
   configFolder.add(ambiantLight, "intensity", 0, 150).name("Ambient Light Intensity");
 
-  configFolder.open(); // optional: auto-expand the folder
+  configFolder.close(); // optional: auto-expand the folder
 
 
 addPlanetsSpeedControlers(planets);
@@ -45,5 +45,5 @@ function addPlanetsSpeedControlers(planets) {
         planet.group.orbitSpeed = value;
       });
   });
-  planetsFolder.open();
+  planetsFolder.close();
 }
