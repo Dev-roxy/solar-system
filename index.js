@@ -7,5 +7,5 @@ import { setupGUI } from "./gui.js";
 export const planets = planetsData.map((data) => createPlanet(data, solarSystem));
 
 animate(planets, controls, composer); // Pass planets, controls , composer to animate function
-console.log(planets)
+
 setupGUI(); // Initialize the GUI for user controls

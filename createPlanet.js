@@ -94,7 +94,6 @@ export function createMoon(moon, planet, orbitGroup, radius, showOrbit) {
     moon.name,
     showOrbit
   );
-
   moonGroup.add(moonMesh);
   orbitGroup.add(moonGroup);
   return {
@@ -102,7 +101,7 @@ export function createMoon(moon, planet, orbitGroup, radius, showOrbit) {
     moonMesh,
     orbitSpeed: moon.orbitSpeed || 0.01,
     rotationSpeed: moon.rotationSpeed || 0.01,
-    isRotating: !moon.isTidalyLocked,
+    isRotating:  !moon.isTidalyLocked || false, // Default to false if not specified
   };
 }
 

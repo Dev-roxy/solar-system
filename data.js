@@ -49,7 +49,7 @@ export const planetsData = [
         texture: "textures/moon.jpg",
         orbitSpeed: 0.0025,
         rotationSpeed: 0.01,
-        isTidalyLocked: true, // Moon is tidally locked to Earth
+        isTidalyLocked: true // Moon is tidally locked to Earth
       },
     ],
   },

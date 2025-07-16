@@ -41,26 +41,26 @@ export function animate(planets, controls, composer) {
           }
         }
 
-        if (group.moons) {
-          group.moons.forEach(({ moonGroup, moonMesh, isRotating }) => {
+        if (group.moons?.length > 0) {
+          group.moons.forEach(({ moonGroup, moonMesh, isRotating,rotationSpeed }) => {
             moonGroup.rotation.y +=
               elapsedTime * moonGroup.orbitSpeed * config.speed; // Rotate the moon around the planet
-
-            const orbitRing = moonGroup.children.find((child) =>
-              child.name.includes("orbit-ring")
-            );
-            if (orbitRing) {
-              orbitRing.innerRadius =
-                planet.distanceFromSun - config.orbitlinesSize;
-              orbitRing.outerRadius =
-                planet.distanceFromSun + config.orbitlinesSize;
-              orbitRing.visible = config.showOrbitLines.moons; // Toggle visibility based on config
-            }
-
-            if (isRotating) {
-              moonMesh.rotation.y +=
-                elapsedTime * moonGroup.rotationSpeed * config.speed; // Rotate the moon around its own axis
-            }
+              
+              
+              if (isRotating) {
+                moonMesh.rotation.y +=
+                elapsedTime * moonMesh.rotationSpeed * config.speed; // Rotate the moon around its own axis
+              }
+              const orbitRing = moonGroup.children.find((child) =>
+                child.name.includes("orbit-ring")
+              );
+              if (orbitRing) {
+                orbitRing.innerRadius =
+                  planet.distanceFromSun - config.orbitlinesSize;
+                orbitRing.outerRadius =
+                  planet.distanceFromSun + config.orbitlinesSize;
+                orbitRing.visible = config.showOrbitLines.moons; // Toggle visibility based on config
+              }
           });
         }
       }
