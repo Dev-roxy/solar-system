@@ -3,12 +3,28 @@
   <head>
     <meta charset="UTF-8" />
     <title>Solar System Assignment</title>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-     <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preload" href="images/frame.png" as="image" />
   </head>
   <body>
+    <div class="loading-screen">
+      <div class="frame">
+        <h3 id="loading-percentage">0%</h3>
+        <p>Please wait while the solar system is being prepared.</p>
+        <p>It may take a few seconds.</p>
+        <div class="loader">
+          <div class="dot" style="--delay: 0s"></div>
+          <div class="dot" style="--delay: 0.2s"></div>
+          <div class="dot" style="--delay: 0.4s"></div>
+          <div class="dot" style="--delay: 0.6s"></div>
+          <div class="dot" style="--delay: 0.8s"></div>
+        </div>
+      </div>
+    </div>
     <canvas id="screen"></canvas>
+    <script type="module" src="loading.js"></script>
     <script type="module" src="index.js"></script>
   </body>
 </html>
