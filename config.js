@@ -7,4 +7,5 @@ export const config = {
   orbitlinesSize: 0.05, // Orbit line thickness
   isPlaying: true, // Play/pause animation state
   isBloomEnabled: true, // Bloom postprocessing effect toggle
+  starCount: 5000, // Number of stars in the star field
 };

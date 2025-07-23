@@ -24,7 +24,7 @@ export const planetsData = [
   {
     name: "Venus",
     radius: 1.5,
-    distanceFromSun: 15,
+    distanceFromSun: 18.6,
     color: 0xffddaa,
     texture: "textures/venus.jpg",
     orbitSpeed: 0.00322,
@@ -35,7 +35,7 @@ export const planetsData = [
   {
     name: "Earth",
     radius: 2,
-    distanceFromSun: 20,
+    distanceFromSun: 25.8,
     color: 0x2194ce,
     texture: "textures/earth.jpg",
     orbitSpeed: 0.002,
@@ -56,7 +56,7 @@ export const planetsData = [
   {
     name: "Mars",
     radius: 1.2,
-    distanceFromSun: 26,
+    distanceFromSun: 39.4,
     color: 0xff3300,
     texture: "textures/mars.jpg",
     orbitSpeed: 0.00106,
@@ -84,7 +84,7 @@ export const planetsData = [
   {
     name: "Jupiter",
     radius: 4,
-    distanceFromSun: 35,
+    distanceFromSun: 70.4,
     color: 0xffa500,
     texture: "textures/jupiter.jpg",
     orbitSpeed: 0.0001686,
@@ -102,7 +102,7 @@ export const planetsData = [
       {
         name: "Europa",
         radius: 0.4,
-        distanceFromPlanet: 2,
+        distanceFromPlanet: 3,
         texture: "textures/europa.jpg",
         orbitSpeed: 0.002,
         rotationSpeed: 0.01,
@@ -110,7 +110,7 @@ export const planetsData = [
       {
         name: "Ganymede",
         radius: 0.6,
-        distanceFromPlanet: 2.5,
+        distanceFromPlanet: 4.5,
         texture: "textures/ganymede.jpg",
         orbitSpeed: 0.0018,
         rotationSpeed: 0.01,
@@ -118,7 +118,7 @@ export const planetsData = [
       {
         name: "Callisto",
         radius: 0.7,
-        distanceFromPlanet: 3,
+        distanceFromPlanet: 6.5,
         texture: "textures/callisto.jpg",
         orbitSpeed: 0.0015,
         rotationSpeed: 0.01,
@@ -128,7 +128,7 @@ export const planetsData = [
   {
     name: "Saturn",
     radius: 3.5,
-    distanceFromSun: 45,
+    distanceFromSun: 120.2,
     color: 0xffcc99,
     texture: "textures/saturn.jpg",
     orbitSpeed: 0.0000679,
@@ -150,7 +150,7 @@ export const planetsData = [
       {
         name: "Titan",
         radius: 0.5,
-        distanceFromPlanet: 1.5,
+        distanceFromPlanet: 3.5,
         texture: "textures/titan.jpg",
         orbitSpeed: 0.002,
         rotationSpeed: 0.01,
@@ -158,7 +158,7 @@ export const planetsData = [
       {
         name: "Rhea",
         radius: 0.4,
-        distanceFromPlanet: 2,
+        distanceFromPlanet: 5,
         texture: "textures/rhea.jpg",
         orbitSpeed: 0.0015,
         rotationSpeed: 0.01,
@@ -166,7 +166,7 @@ export const planetsData = [
       {
         name: "Iapetus",
         radius: 0.3,
-        distanceFromPlanet: 2.5,
+        distanceFromPlanet: 6.5,
         texture: "textures/iapetus.jpg",
         orbitSpeed: 0.0012,
         rotationSpeed: 0.01,
@@ -176,7 +176,7 @@ export const planetsData = [
   {
     name: "Uranus",
     radius: 3,
-    distanceFromSun: 55,
+    distanceFromSun: 150.2,
     color: 0x66ffff,
     texture: "textures/uranus.jpg",
     orbitSpeed: 0.0000238,
@@ -194,7 +194,7 @@ export const planetsData = [
       {
         name: "Oberon",
         radius: 0.3,
-        distanceFromPlanet: 2,
+        distanceFromPlanet: 3,
         texture: "textures/oberon.jpg",
         orbitSpeed: 0.0012,
         rotationSpeed: 0.01,
@@ -204,7 +204,7 @@ export const planetsData = [
   {
     name: "Neptune",
     radius: 2.8,
-    distanceFromSun: 65,
+    distanceFromSun: 190.4,
     color: 0x3366ff,
     texture: "textures/neptune.jpg",
     orbitSpeed: 0.0000121,
@@ -222,7 +222,7 @@ export const planetsData = [
       {
         name: "Nereid",
         radius: 0.2,
-        distanceFromPlanet: 2,
+        distanceFromPlanet: 3,
         texture: "textures/nereid.jpg",
         orbitSpeed: 0.0008,
         rotationSpeed: 0.01,

@@ -19,7 +19,7 @@ function updateLoadingPercentage(percentage) {
     }
   }
 
-  textures.push("/textures/space.jpg"); // Add the space texture to the list
+  //textures.push("/textures/space.jpg"); // Add the space texture to the list
   for (const planet of planetsData) {
     planet.texture && textures.push(planet.texture);
     if (planet.moons.length > 0) {

@@ -5,7 +5,10 @@ import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import { UnrealBloomPass } from "three/examples/jsm/Addons.js";
 import { config } from "./config";
 import { textureLoader } from "./utils/textureLoader.js";
+import { createStarField } from "./utils/createStarsfield.js";
+
 const canvas = document.getElementById("screen");
+
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(
@@ -57,6 +60,9 @@ document.addEventListener("resize", function () {
 });
 
 // adding a background texture to the scene
+await createStarField(config.starCount).then((stars) => {
+  scene.add(stars);
+});
 
 // Load the space texture
 const spaceTexture = textureLoader.load('/textures/space.jpg',(texture)=>{
@@ -68,17 +74,6 @@ const spaceTexture = textureLoader.load('/textures/space.jpg',(texture)=>{
 });
 
 // Create geometry (big enough to surround the scene)
-const geometry = new THREE.SphereGeometry(500, 64, 64);
-// Create material with space texture
-const material = new THREE.MeshBasicMaterial({
-  map: spaceTexture,
-  side: THREE.BackSide, // ensure texture is visible from inside
-});
-// Create the mesh
-const spaceSphere = new THREE.Mesh(geometry, material);
-
-// Add to the scene
-scene.add(spaceSphere);
 
 
 // Create a bloom pass for post-processing effects
